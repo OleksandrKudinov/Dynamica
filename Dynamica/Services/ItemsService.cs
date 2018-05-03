@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Dynamica
 {
-    internal sealed class ItemsService
+    public sealed class ItemsService
     {
         public void SaveItems(IEnumerable<object> items, Type type = null)
         {

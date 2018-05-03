@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Dynamica.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +14,8 @@ namespace Dynamica.Controllers
 
         public GenerateTypeController(TypeGenerationService service) // add IoC
         {
-            _service = service ?? throw new NullReferenceException($"Missing argument {nameof(service)}");
+            _service = service ?? throw new ArgumentNullException(nameof(service));
         }
-
 
         // TODO also add previously generated datatypes
         [HttpGet("supportedDefaultTypes")]
